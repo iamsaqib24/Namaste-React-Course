@@ -36,3 +36,9 @@
 .card > img {
   width: 100%;
 }
+
+/* Restaurant List */
+
+.retaurant-list {
+  display: flex;
+}
