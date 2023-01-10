@@ -1989,9 +1989,7 @@ const restaurantList = [
       },
 ]
 
-const RestaurantCard = ({restaurant}) => {
-
-    const {cloudinaryImageId, name, cuisines, avgRating} = restaurant.data
+const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating}) => {
 
     return (
         <div className="card">
@@ -2009,14 +2007,17 @@ const RestaurantCard = ({restaurant}) => {
 const Body = () => {
     return (
         <div className="retaurant-list">
-            <RestaurantCard restaurant={restaurantList[0]} />
-            <RestaurantCard restaurant={restaurantList[1]} />
-            <RestaurantCard restaurant={restaurantList[2]} />
-            <RestaurantCard restaurant={restaurantList[3]} />
-            <RestaurantCard restaurant={restaurantList[4]} />
-            <RestaurantCard restaurant={restaurantList[5]} />
-            <RestaurantCard restaurant={restaurantList[6]} />
-            <RestaurantCard restaurant={restaurantList[7]} />
+            {
+                restaurantList.map(restaurant => <RestaurantCard {...restaurant.data} />)
+            }
+            {/* <RestaurantCard {...restaurantList[0].data} />
+            <RestaurantCard {...restaurantList[1].data} />
+            <RestaurantCard {...restaurantList[2].data} />
+            <RestaurantCard {...restaurantList[3].data} />
+            <RestaurantCard {...restaurantList[4].data} />
+            <RestaurantCard {...restaurantList[5].data} />
+            <RestaurantCard {...restaurantList[6].data} />
+            <RestaurantCard {...restaurantList[7].data} /> */}
         </div>
     )
 }
