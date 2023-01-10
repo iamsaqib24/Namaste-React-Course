@@ -2008,7 +2008,7 @@ const Body = () => {
     return (
         <div className="retaurant-list">
             {
-                restaurantList.map(restaurant => <RestaurantCard {...restaurant.data} />)
+                restaurantList.map(restaurant => <RestaurantCard {...restaurant.data} key={restaurant.data.id} />)
             }
             {/* <RestaurantCard {...restaurantList[0].data} />
             <RestaurantCard {...restaurantList[1].data} />
