@@ -1,14 +1,28 @@
 import { restaurantList } from '../constants'
 import RestaurantCard from './RestaurantCard'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function filterData(searchInput, restaurants) {
     return restaurants.filter((restaurant) => restaurant.data.name.includes(searchInput))
 }
 
 const Body = () => {
+
+
     const [restaurants, setRestaurants] = useState(restaurantList)
     const [searchInput, setSearchInput] = useState("")
+
+    useEffect(() => {
+        getRestaurants()
+    }, [])
+
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.3260152&lng=75.57618289999999&page_type=DESKTOP_WEB_LISTING")
+        const json = await data.json()
+        // console.log(json);
+        setRestaurants(json?.data?.cards[2]?.data?.data?.cards)
+    }
+
 
     return (
         <>
