@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Logo from '../assets/img/foodvilla.png'
 
 const userLoggedIn = () => {
     return false
@@ -9,7 +10,7 @@ const Title = () => (
     <a href="/">
         <img
             className="logo"
-            src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+            src={Logo}
             alt="logo" />
     </a>
 )
