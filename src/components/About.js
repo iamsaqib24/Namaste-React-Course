@@ -1,6 +1,6 @@
 import React from 'react'
-import Profile from "../components/Profile"
 import { Outlet } from 'react-router-dom'
+import Profile from "./ProfileClass"
 
 const About = () => {
   return (
@@ -8,7 +8,7 @@ const About = () => {
         <h1>About Us</h1>
         <p>Chapter-07 - Finding the Path</p>
         <Outlet />
-        {/* <Profile /> */}
+        <Profile name="Saqib" />
     </div>
   )
 }
