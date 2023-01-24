@@ -9,6 +9,7 @@ import Error from './components/Error'
 import { CDN_URL } from './constants'
 import Contact from './components/Contact'
 import RestaurantMenu from './components/RestaurantMenu'
+import Profile from './components/Profile'
 
 
 const Page = () => {
@@ -33,7 +34,13 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />
+                element: <About />,
+                children: [
+                    {
+                        path: "profile",
+                        element: <Profile />
+                    }
+                ]
             },
             {
                 path: "/contact",
