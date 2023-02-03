@@ -8,30 +8,27 @@ class Profile extends React.Component {
 
         this.state = {
             count: 0,
-            count2: 2,
         }
-        console.log("Inside Constuctor");
+        console.log("Child Inside Constuctor");
     }
 
     componentDidMount() {
         // best place to make api calls
-        console.log("componentDidMount");
+        console.log("Child componentDidMount");
     }
 
     render() {
         const {count} = this.state // destructured
 
-        console.log("Inside Render");
+        console.log("Child Inside Render");
 
         return (
             <div>
                 <h2>Profile class component, {this.props.name}</h2>
                 <h2>State variable with initial value: {count}</h2>
-                <h3>Another state variable: {this.state.count2}</h3>
                 <button onClick={() => {
                     this.setState({
                         count: 1,
-                        count2: 4,
                     })
                 }}>SetCount</button>
             </div>
