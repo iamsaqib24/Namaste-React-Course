@@ -10,10 +10,18 @@ class Profile extends React.Component {
             count: 0,
             count2: 2,
         }
+        console.log("Inside Constuctor");
+    }
+
+    componentDidMount() {
+        // best place to make api calls
+        console.log("componentDidMount");
     }
 
     render() {
         const {count} = this.state // destructured
+
+        console.log("Inside Render");
 
         return (
             <div>
