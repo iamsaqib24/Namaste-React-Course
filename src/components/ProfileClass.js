@@ -7,13 +7,23 @@ class Profile extends React.Component {
         super(props)
 
         this.state = {
-            count: 0,
+            userInfo: {
+                name: "Dummy Name",
+                location: "Dummy Location"
+            },
         }
         console.log("Child Inside Constuctor");
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // best place to make api calls
+
+        const data = await fetch("https://api.github.com/users/iamsaqib24")
+        const json = await data.json()
+        this.setState({
+            userInfo: json
+        })
+
         console.log("Child componentDidMount");
     }
 
@@ -24,13 +34,8 @@ class Profile extends React.Component {
 
         return (
             <div>
-                <h2>Profile class component, {this.props.name}</h2>
-                <h2>State variable with initial value: {count}</h2>
-                <button onClick={() => {
-                    this.setState({
-                        count: 1,
-                    })
-                }}>SetCount</button>
+                <h2>Name: {this.state.userInfo.name}</h2>
+                <h2>Location: {this.state.userInfo.location}</h2>
             </div>
         )
     }

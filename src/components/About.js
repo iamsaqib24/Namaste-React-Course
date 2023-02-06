@@ -34,7 +34,7 @@ class About extends React.Component {
                 <p>Chapter-07 - Finding the Path</p>
                 {/* <Outlet /> */}
                 <Profile name={"Saqqu"} />
-                <Profile name={"Saqqu 22"} />
+                {/* <Profile name={"Saqqu 22"} /> */}
             </div>
         )
     }
