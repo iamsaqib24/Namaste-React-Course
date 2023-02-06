@@ -18,13 +18,21 @@ class Profile extends React.Component {
     async componentDidMount() {
         // best place to make api calls
 
-        const data = await fetch("https://api.github.com/users/iamsaqib24")
-        const json = await data.json()
-        this.setState({
-            userInfo: json
-        })
+        this.timer = setInterval(() => {
+            console.log("Namaste");
+        }, 1000)
 
         console.log("Child componentDidMount");
+    }
+
+    componentDidUpdate() {
+        console.log("Component did update");
+    }
+
+    componentWillUnmount() {
+
+        clearInterval(this.timer)
+        console.log("component will unmount");
     }
 
     render() {
