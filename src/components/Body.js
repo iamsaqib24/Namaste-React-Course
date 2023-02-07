@@ -27,11 +27,11 @@ const Body = () => {
     }
 
     // useOnline hook,
-    const isOnline = useOnline()
+    // const isOnline = useOnline()
 
-    if(!isOnline) {
-        return <h1>Oops, please check your internet connection</h1>
-    }
+    // if(!isOnline) {
+    //     return <h1>Oops, please check your internet connection</h1>
+    // }
 
     // not rendering component (Early return)
     if(!allRestaurants) return null

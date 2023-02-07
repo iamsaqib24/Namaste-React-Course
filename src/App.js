@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React, { Children, lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './components/Header'
 import Body from './components/Body'
@@ -10,7 +10,11 @@ import { CDN_URL } from './constants'
 import Contact from './components/Contact'
 import RestaurantMenu from './components/RestaurantMenu'
 import Profile from './components/Profile'
+import Shimmer from './components/Shimmer'
+// import Instamart from './components/Instamart'
 
+const Instamart = lazy(() => import('./components/Instamart'))
+// on demand loading -> upon render -> suspend loading
 
 const Page = () => {
     return (
@@ -49,6 +53,14 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurant/:id",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/instamart",
+                element: (
+                    <Suspense fallback={<Shimmer />}>
+                        <Instamart />
+                    </Suspense>
+                )
             },
         ]
     },
