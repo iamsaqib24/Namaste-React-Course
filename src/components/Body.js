@@ -45,14 +45,14 @@ const Body = () => {
                 <input
                     type="text"
                     placeholder="search"
-                    className="search-input"
+                    className="p-2 m-2 focus:bg-sky-100"
                     value={searchInput}
                     onChange={(e) => {
                         setSearchInput(e.target.value)
                     }}
                 />
                 <button
-                    className="p-2 m-2 bg-sky-900 text-white rounded-xl"
+                    className="p-2 m-2 bg-sky-900 hover:bg-sky-500 text-white rounded-xl"
                     onClick={() => {
                         const data = filterData(searchInput, allRestaurants)
                         setFilteredRestaurants(data)
