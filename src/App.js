@@ -11,6 +11,7 @@ import Contact from './components/Contact'
 import RestaurantMenu from './components/RestaurantMenu'
 import Profile from './components/Profile'
 import Shimmer from './components/Shimmer'
+import UserContext from './utils/UserContext'
 // import Instamart from './components/Instamart'
 
 const Instamart = lazy(() => import('./components/Instamart'))
@@ -24,11 +25,13 @@ const Page = () => {
     })
 
     return (
-        <React.Fragment>
+        <UserContext.Provider value={{
+            user: user
+        }}>
             <Header />
             <Outlet />
             <Footer />
-        </React.Fragment>
+        </UserContext.Provider>
     )
 }
 
@@ -40,10 +43,7 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body user={{
-                    name: "Foodvilla",
-                    email: "foodvilla@foodvilla.com"
-                }} />
+                element: <Body />
             },
             {
                 path: "/about",
