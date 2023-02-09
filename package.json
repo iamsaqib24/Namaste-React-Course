@@ -9,10 +9,11 @@
   "author": "Saqib",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "parcel": "^2.8.2",
     "postcss": "^8.4.21",
     "process": "^0.11.10",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.6"
   },
   "dependencies": {
     "react": "^18.2.0",
