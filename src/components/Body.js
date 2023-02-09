@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom'
 import { filterData } from '../utils/Helper'
 import useOnline from '../utils/useOnline'
 
-
-const Body = () => {
+// you can write "props.user" instead of "{user}"
+const Body = ({user}) => {
 
     const [allRestaurants, setAllRestaurants] = useState([])
     const [filteredRestaurants, setFilteredRestaurants] = useState([])
@@ -64,7 +64,7 @@ const Body = () => {
                     filteredRestaurants.map(restaurant => {
                         return (
                             <Link to={"/restaurant/" + restaurant.data.id } key={restaurant.data.id} >
-                                <RestaurantCard {...restaurant.data} />
+                                <RestaurantCard {...restaurant.data} user={user} />
                             </Link>
                         )
                     })

@@ -1,4 +1,4 @@
-import React, { Children, lazy, Suspense } from 'react'
+import React, { Children, lazy, Suspense, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './components/Header'
 import Body from './components/Body'
@@ -17,6 +17,12 @@ const Instamart = lazy(() => import('./components/Instamart'))
 // on demand loading -> upon render -> suspend loading
 
 const Page = () => {
+
+    const [user, setUser] = useState({
+        name: "Saqib",
+        email: "iamsaqib24@gmail.com"
+    })
+
     return (
         <React.Fragment>
             <Header />
@@ -34,7 +40,10 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body />
+                element: <Body user={{
+                    name: "Foodvilla",
+                    email: "foodvilla@foodvilla.com"
+                }} />
             },
             {
                 path: "/about",
