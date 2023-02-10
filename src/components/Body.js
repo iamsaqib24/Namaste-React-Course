@@ -1,17 +1,19 @@
 import { restaurantList } from '../constants'
 import RestaurantCard from './RestaurantCard'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import Shimmer from './Shimmer'
 import {Link} from 'react-router-dom'
 import { filterData } from '../utils/Helper'
 import useOnline from '../utils/useOnline'
+import UserContext from '../utils/UserContext'
 
 // you can write "props.user" instead of "{user}"
-const Body = ({user}) => {
+const Body = () => {
 
     const [allRestaurants, setAllRestaurants] = useState([])
     const [filteredRestaurants, setFilteredRestaurants] = useState([])
     const [searchInput, setSearchInput] = useState("")
+    const {user, setUser} = useContext(UserContext)
 
 
     useEffect(() => {
@@ -58,6 +60,12 @@ const Body = ({user}) => {
                         setFilteredRestaurants(data)
                     }}
                 >Search</button>
+                <input value={user.name} onChange={
+                    e => setUser({
+                        name: e.target.value,
+                        email: "abc@abc.com"
+                    })
+                } />
             </div>
             <div className="flex flex-wrap">
                 {

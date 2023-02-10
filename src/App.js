@@ -26,7 +26,8 @@ const Page = () => {
 
     return (
         <UserContext.Provider value={{
-            user: user
+            user: user,
+            setUser: setUser
         }}>
             <Header />
             <Outlet />
