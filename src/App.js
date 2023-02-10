@@ -11,7 +11,9 @@ import Contact from './components/Contact'
 import RestaurantMenu from './components/RestaurantMenu'
 import Profile from './components/Profile'
 import Shimmer from './components/Shimmer'
-import UserContext from './utils/UserContext'
+import { Provider } from 'react-redux'
+import store from './utils/store'
+
 // import Instamart from './components/Instamart'
 
 const Instamart = lazy(() => import('./components/Instamart'))
@@ -19,20 +21,14 @@ const Instamart = lazy(() => import('./components/Instamart'))
 
 const Page = () => {
 
-    const [user, setUser] = useState({
-        name: "Saqib",
-        email: "iamsaqib24@gmail.com"
-    })
-
     return (
-        <UserContext.Provider value={{
-            user: user,
-            setUser: setUser
-        }}>
-            <Header />
-            <Outlet />
-            <Footer />
-        </UserContext.Provider>
+        <>
+            <Provider store={store}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </Provider>
+        </>
     )
 }
 
