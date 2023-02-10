@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 import { CDN_URL } from "../constants"
+import { addItem } from "../utils/cartSlice"
 import useRestaurant from "../utils/useRestaurant"
 import Shimmer from "./Shimmer"
 
@@ -8,6 +10,13 @@ const RestaurantMenu = () => {
     const {id} = useParams()
 
     const restaurant = useRestaurant(id)
+
+    const dispatch = useDispatch()
+
+    const handleAddItem = () => {
+        dispatch(addItem("Banana"))
+    }
+
 
   return (!restaurant) ? (<Shimmer />) : (
     <>
@@ -18,6 +27,9 @@ const RestaurantMenu = () => {
             {/* <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ytxglcbv0blbugivcb73" alt="" srcset="" /> */}
             <h3>{restaurant?.city}</h3>
             <h3>{restaurant?.avgRating} stars</h3>
+        </div>
+        <div>
+            <button className="p-2 m-5 bg-purple-500" onClick={() => handleAddItem()}>Add item</button>
         </div>
         <div>
             <h1>Menu Lists</h1>
