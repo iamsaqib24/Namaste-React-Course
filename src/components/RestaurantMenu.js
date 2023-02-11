@@ -13,13 +13,13 @@ const RestaurantMenu = () => {
 
     const dispatch = useDispatch()
 
-    const handleAddItem = () => {
-        dispatch(addItem("Banana"))
+    const addFoodItem = (item) => {
+        dispatch(addItem(item))
     }
 
 
   return (!restaurant) ? (<Shimmer />) : (
-    <>
+    <div className="flex">
         <div>
             <h1>Restaurant id : {id}</h1>
             <h2>{restaurant?.name}</h2>
@@ -28,16 +28,16 @@ const RestaurantMenu = () => {
             <h3>{restaurant?.city}</h3>
             <h3>{restaurant?.avgRating} stars</h3>
         </div>
-        <div>
+        {/* <div>
             <button className="p-2 m-5 bg-purple-500" onClick={() => handleAddItem()}>Add item</button>
-        </div>
-        <div>
+        </div> */}
+        <div className="p-5">
             <h1>Menu Lists</h1>
             <ul>
-                {Object.values(restaurant?.menu?.items).map((item) => ( <li key={item.id}>{item.name}</li> ))}
+                {Object.values(restaurant?.menu?.items).map((item) => ( <li key={item.id}>{item.name} - <button className="p-1 bg-fuchsia-200" onClick={() => addFoodItem(item)}>add</button></li> ))}
             </ul>
         </div>
-    </>
+    </div>
   )
 }
 
