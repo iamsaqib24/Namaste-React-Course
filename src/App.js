@@ -11,8 +11,9 @@ import Contact from './components/Contact'
 import RestaurantMenu from './components/RestaurantMenu'
 import Profile from './components/Profile'
 import Shimmer from './components/Shimmer'
-import { Provider } from 'react-redux'
+import { Provider, useDispatch } from 'react-redux'
 import store from './utils/store'
+import Cart from './components/Cart'
 
 // import Instamart from './components/Instamart'
 
@@ -68,6 +69,10 @@ const appRouter = createBrowserRouter([
                     </Suspense>
                 )
             },
+            {
+                path: "/cart",
+                element: <Cart />
+            }
         ]
     },
 ])
