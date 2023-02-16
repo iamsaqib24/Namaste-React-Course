@@ -44,22 +44,27 @@ const Body = () => {
             <div className="search-container text-center bg-purple-500 my-1">
                 <input
                     type="text"
-                    placeholder="search"
-                    className="p-2 m-2 focus:bg-sky-100"
+                    placeholder="search for restaurant"
+                    className="p-2 m-2 w-2/4 focus:bg-sky-100"
                     value={searchInput}
                     onChange={(e) => {
                         setSearchInput(e.target.value)
+                        if (searchInput == "") {
+                            setFilteredRestaurants(allRestaurants)
+                        } else {
+                            setFilteredRestaurants(filterData(e.target.value, allRestaurants))
+                        }
                     }}
                 />
-                <button
+                {/* <button
                     className="p-2 m-2 bg-sky-900 hover:bg-purple-500 hover:border-2 text-white rounded-xl"
                     onClick={() => {
                         const data = filterData(searchInput, allRestaurants)
                         setFilteredRestaurants(data)
                     }}
-                >Search</button>
+                >Search</button> */}
             </div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-evenly">
                 {
                     filteredRestaurants.map(restaurant => {
                         return (
