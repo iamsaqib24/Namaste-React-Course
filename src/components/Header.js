@@ -46,19 +46,19 @@ const Header = () => {
                     <li className="px-2">
                         <Link to="/instamart">Instamart</Link>
                     </li>
-
                     <li className="px-2">
                         <Link to="/cart">Cart - {cartItems.length}</Link>
                     </li>
+
                 </ul>
             </div>
             {/* <h1>{isOnline ? "✅" : "🔴"}</h1> */}
             {/* <h1 className="p-5 font-bold text-purple-200">{user.name}</h1> */}
             <div>
                     {isLoggedIn ? (
-                        <button className="p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
+                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
                     ) : (
-                        <button className="p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
+                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
                     )
                 }
             </div>
