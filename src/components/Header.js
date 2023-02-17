@@ -29,11 +29,11 @@ const Header = () => {
 
 
     return (
-        <div className="flex justify-between bg-purple-800 sm:bg-purple-700 md:bg-purple-600">
+        <div className="flex justify-between bg-slate-50 shadow-xl">
             <Title />
 
             <div className="nav-items">
-                <ul className="flex py-6 text-white space-x-11">
+                <ul className="flex py-6 font-medium text-gray-700 space-x-11">
                     <li className="px-2">
                         <Link to="/">Home</Link>
                     </li>
@@ -52,14 +52,16 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
-            <h1>{isOnline ? "✅" : "🔴"}</h1>
-            <h1 className="p-5 font-bold text-purple-200">{user.name}</h1>
-            {isLoggedIn ? (
-                <button className="p-2 m-2 bg-sky-900 hover:bg-purple-500 hover:border-2 text-white rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
-            ) : (
-                <button className="p-2 m-2 bg-sky-900 hover:bg-purple-500 hover:border-2 text-white rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
-            )
-        }
+            {/* <h1>{isOnline ? "✅" : "🔴"}</h1> */}
+            {/* <h1 className="p-5 font-bold text-purple-200">{user.name}</h1> */}
+            <div>
+                    {isLoggedIn ? (
+                        <button className="p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
+                    ) : (
+                        <button className="p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
+                    )
+                }
+            </div>
         </div>
     )
 }
