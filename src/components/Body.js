@@ -41,7 +41,7 @@ const Body = () => {
 
     return (allRestaurants?.length === 0) ? <Shimmer /> : (
         <>
-            <div className="text-center my-1">
+            <div className="text-center my-10">
                 <input
                     type="text"
                     placeholder="Search for restaurant"
@@ -65,7 +65,7 @@ const Body = () => {
                     }}
                 >Search</button> */}
             </div>
-            <div className="flex flex-wrap justify-evenly bg-slate-800">
+            <div className="flex flex-wrap justify-evenly ">
                 {
                     filteredRestaurants.map(restaurant => {
                         return (

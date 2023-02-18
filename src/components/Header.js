@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import Logo from '../assets/img/food-logo.png'
+import Logo from '../assets/img/delivery.png'
 import { Link } from "react-router-dom"
 import useOnline from "../utils/useOnline"
 import UserContext from "../utils/UserContext"
@@ -29,7 +29,7 @@ const Header = () => {
 
 
     return (
-        <div className="flex justify-between bg-slate-50 shadow-xl">
+        <div className="flex justify-between bg-slate-50  shadow-xl sticky top-0">
             <Title />
 
             <div className="nav-items">
@@ -37,9 +37,9 @@ const Header = () => {
                     <li className="px-2">
                         <Link to="/">Home</Link>
                     </li>
-                    <li className="px-2">
+                    {/* <li className="px-2">
                         <Link to="/about">About</Link>
-                    </li>
+                    </li> */}
                     <li className="px-2">
                         <Link to="/contact">Contact</Link>
                     </li>
