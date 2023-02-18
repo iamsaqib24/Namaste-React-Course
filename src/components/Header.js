@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import Logo from '../assets/img/foodvilla.png'
+import Logo from '../assets/img/food-logo.png'
 import { Link } from "react-router-dom"
 import useOnline from "../utils/useOnline"
 import UserContext from "../utils/UserContext"
@@ -10,7 +10,7 @@ import store from "../utils/store"
 const Title = () => (
     <a href="/">
         <img
-            className="h-14 pt-5 px-3 rounded-full"
+            className="h-14 pt-5 px-5"
             src={Logo}
             alt="logo" />
     </a>
@@ -33,7 +33,7 @@ const Header = () => {
             <Title />
 
             <div className="nav-items">
-                <ul className="flex py-6 font-medium text-gray-700 space-x-11">
+                <ul className="flex py-6 font-medium text-slate-700 space-x-11">
                     <li className="px-2">
                         <Link to="/">Home</Link>
                     </li>

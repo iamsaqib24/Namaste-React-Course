@@ -45,7 +45,7 @@ const Body = () => {
                 <input
                     type="text"
                     placeholder="Search for restaurant"
-                    className="p-3 h-10 mt-2 mb-2 w-2/5 rounded-sm"
+                    className="border border-black p-3 h-10 mt-2 mb-2 w-2/5 rounded-sm shadow-l"
                     value={searchInput}
                     onChange={(e) => {
                         setSearchInput(e.target.value)
@@ -56,6 +56,7 @@ const Body = () => {
                         }
                     }}
                 />
+
                 {/* <button
                     className="p-2 bg-sky-900 hover:bg-purple-500 hover:border-2 text-white rounded-r-xl"
                     onClick={() => {
@@ -64,7 +65,7 @@ const Body = () => {
                     }}
                 >Search</button> */}
             </div>
-            <div className="flex flex-wrap justify-evenly">
+            <div className="flex flex-wrap justify-evenly bg-slate-800">
                 {
                     filteredRestaurants.map(restaurant => {
                         return (
