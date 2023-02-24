@@ -29,7 +29,7 @@ const Header = () => {
 
 
     return (
-        <div className="flex justify-between bg-slate-50  shadow-xl sticky top-0">
+        <div className="flex justify-between bg-white  shadow-sm sticky top-0">
             <Title />
 
             <div className="nav-items">
@@ -56,9 +56,9 @@ const Header = () => {
             {/* <h1 className="p-5 font-bold text-purple-200">{user.name}</h1> */}
             <div>
                     {isLoggedIn ? (
-                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
+                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:text-white hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(false)}>Log Out</button>
                     ) : (
-                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
+                        <button className="font-medium p-2 m-4 hover:bg-slate-500 hover:text-white hover:border-2 text-gray-700 rounded-xl" onClick={() => setIsLoggedIn(true)}>Log In</button>
                     )
                 }
             </div>

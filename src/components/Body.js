@@ -33,6 +33,11 @@ const Body = () => {
     //     return <h1>Oops, please check your internet connection</h1>
     // }
 
+
+
+
+
+
     // not rendering component (Early return)
     if(!allRestaurants) return null
 
@@ -40,12 +45,12 @@ const Body = () => {
 
 
     return (allRestaurants?.length === 0) ? <Shimmer /> : (
-        <>
+        <div className="flex flex-col">
             <div className="text-center my-10">
                 <input
                     type="text"
                     placeholder="Search for restaurant"
-                    className="border border-black p-3 h-10 mt-2 mb-2 w-2/5 rounded-sm shadow-l"
+                    className="border border-gray-400 p-3 h-10 mt-2 mb-2 w-2/5 outline-none"
                     value={searchInput}
                     onChange={(e) => {
                         setSearchInput(e.target.value)
@@ -65,7 +70,7 @@ const Body = () => {
                     }}
                 >Search</button> */}
             </div>
-            <div className="flex flex-wrap justify-evenly ">
+            <div className="flex flex-wrap justify-center">
                 {
                     filteredRestaurants.map(restaurant => {
                         return (
@@ -76,7 +81,7 @@ const Body = () => {
                     })
                 }
             </div>
-        </>
+        </div>
     )
 }
 
