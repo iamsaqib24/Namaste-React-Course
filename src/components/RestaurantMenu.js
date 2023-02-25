@@ -43,14 +43,14 @@ const RestaurantMenu = () => {
 
         <div className="flex justify-center">
 
-            <div className="p-5">
+            <div className="p-10 w-2/4">
                 <h1 className="font-bold">Menu Lists</h1>
                 <ul>
                     {Object.values(restaurant?.menu?.items).map((item) => ( <li key={item.id}>{item.name} - <button className="p-2 bg-gray-500 rounded-md text-white" onClick={() => addFoodItem(item)}>add</button></li> ))}
                 </ul>
             </div>
 
-            <div>
+            <div className="p-10 ">
                 <h1 className="text-gray-500 font-bold mb-5 text-3xl">Cart Empty</h1>
                 <img className="h-52" src={CART_EMPTY} alt={"empty cart"} />
                 <h2 className="text-gray-400">Good food is always cooking!</h2>
