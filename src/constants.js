@@ -1,5 +1,7 @@
 export const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 
+export const CART_EMPTY = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2"
+
 export const FETCH_MENU_URL = "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=31.3260152&lng=75.57618289999999&menuId="
 
 export const SWIGGY_API = "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.3260152&lng=75.57618289999999&page_type=DESKTOP_WEB_LISTING"
